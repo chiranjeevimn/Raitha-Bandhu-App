@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import SignUpForm from './SignUpForm'; // Adjust the path based on your project structure
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/Home';
+import Signup from './src/Signup';
+import Login from './src/Login';
+import Index from './src/Index';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>This is a new web page</Text>
-      <SignUpForm />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Index" component={Index} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Login" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#cff5c9',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
