@@ -11,17 +11,17 @@ const Signup = props => {
       <View style={{alignItems: 'center', width: 410}}>
         <Text
           style={{
-            color: 'white',
-            fontSize: 64,
+            color: 'red',
+            fontSize: 42,
             fontWeight: 'bold',
-            marginTop: 50,
+            marginTop: 20,
           }}>
           Register
         </Text>
         <Text
           style={{
-            color: 'white',
-            fontSize: 19,
+            color: 'yellow',
+            fontSize: 18,
             fontWeight: 'bold',
             marginBottom: 20,
           }}>
@@ -30,32 +30,44 @@ const Signup = props => {
         <View
           style={{
             backgroundColor: 'white',
-            height: 700,
+            height: 800,
             width: 460,
             borderTopLeftRadius: 130,
-            paddingTop: 50,
+            paddingTop: 10,
             alignItems: 'center',
           }}>
-          <Field placeholder="First Name" />
-          <Field placeholder="Last Name" />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>User Name</Text>
+          <Field placeholder="User Name" />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>Mobile Number</Text>
+          <Field placeholder="Mobile Number" keyboardType={'number'} />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>Email</Text>
           <Field
             placeholder="Email / Username"
             keyboardType={'email-address'}
           />
-          <Field placeholder="Contact Number" keyboardType={'number'} />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>Aadhar Number</Text>
+          <Field placeholder="Aadhar No" keyboardType={'number'} />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>Wet land Acre</Text>
+          <Field placeholder="Aadhar No" keyboardType={'number'} />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>Wet Land Survey No</Text>
+          <Field placeholder="Aadhar No" keyboardType={'number'} />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>Dry land Acre</Text>
+          <Field placeholder="Aadhar No" keyboardType={'number'} />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>Dry Land Survey No</Text>
+          <Field placeholder="Aadhar No" keyboardType={'number'} />
+          <Text style={{fontSize: 18, color: darkGreen, fontWeight: 'bold'}}>Password</Text>
           <Field placeholder="Password" secureTextEntry={true} />
-          <Field placeholder="Confirm Password" secureTextEntry={true} />
           <View
             style={{
               display: 'flex',
               flexDirection: 'row',
               width: '78%',
-              paddingRight: 16
+              paddingRight: 14
             }}>
-            <Text style={{color: 'grey', fontSize: 16}}>
+            <Text style={{color: 'grey', fontSize: 14}}>
               By signing in, you agree to our{' '}
             </Text>
-            <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 16}}>
+            <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 14}}>
               Terms & Conditions
             </Text>
           </View>
@@ -66,13 +78,12 @@ const Signup = props => {
               flexDirection: 'row',
               justifyContent :"center",
               width: '78%',
-              paddingRight: 16,
-              marginBottom: 10
+              paddingRight: 14,
             }}>
-            <Text style={{color: 'grey', fontSize: 16}}>
+            <Text style={{color: 'grey', fontSize: 14}}>
               and {" "}
             </Text>
-            <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 16}}>
+            <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 14}}>
               Privacy Policy
             </Text>
           </View>
@@ -81,7 +92,7 @@ const Signup = props => {
             bgColor={darkGreen}
             btnLabel="Signup"
             Press={() => {
-              alert('Accoutn created');
+              alert('Account created');
               props.navigation.navigate('Login');
             }}
           />

@@ -39,10 +39,14 @@ const Login = (props) => {
             }}>
             Login to your account
           </Text>
+          <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 16}}>Email</Text>
           <Field
+            
             placeholder="Email / Username"
             keyboardType={'email-address'}
+            
           />
+          <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 16}}>Password</Text>
           <Field placeholder="Password" secureTextEntry={true} />
           <View
             style={{alignItems: 'flex-end', width: '78%', paddingRight: 16, marginBottom: 200}}>
