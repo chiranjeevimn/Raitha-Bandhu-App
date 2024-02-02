@@ -10,6 +10,7 @@ class Home extends Component {
         <View style={styles.rect2StackStack}>
           <View style={styles.rect2Stack}>
             <Image
+              source={require('./Images/blob1.png')}
               resizeMode='cover'
               style={styles.rect2}
             ></Image>
