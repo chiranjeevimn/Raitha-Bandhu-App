@@ -5,7 +5,7 @@ import Home from './src/Home';
 import Signup from './src/Signup';
 import Login from './src/Login';
 import Index from './src/Index';
-import DetailHome from './src/Module/DetailHome';  // Correct import
+  // Correct import
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="DetailHome" component={DetailHome} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
