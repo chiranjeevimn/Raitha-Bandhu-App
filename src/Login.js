@@ -1,14 +1,24 @@
 import React from 'react';
-import {View, Text, Touchable, TouchableOpacity} from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';  // Import the necessary navigation hook
 import Background from './Background';
 import Btn from './Btn';
-import {darkGreen} from './Constants';
+import { darkGreen } from './Constants';
 import Field from './Field';
 
 const Login = (props) => {
+  const navigation = useNavigation();  // Initialize the navigation hook
+
+  const handleLogin = () => {
+    // Perform your login logic here
+    alert('Logged In');
+    // Navigate to the DetailHome screen
+    navigation.navigate('./Module/DetailHome');
+  };
+
   return (
     <Background>
-      <View style={{alignItems: 'center', width: 410}}>
+      <View style={{ alignItems: 'center', width: 410 }}>
         <Text
           style={{
             color: 'white',
@@ -27,7 +37,7 @@ const Login = (props) => {
             paddingTop: 110,
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 40, color: darkGreen, fontWeight: 'bold'}}>
+          <Text style={{ fontSize: 40, color: darkGreen, fontWeight: 'bold' }}>
             Welcome Back
           </Text>
           <Text
@@ -39,26 +49,24 @@ const Login = (props) => {
             }}>
             Login to your account
           </Text>
-          <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 16}}>Email</Text>
+          <Text style={{ color: darkGreen, fontWeight: 'bold', fontSize: 16 }}>Email</Text>
           <Field
-            
             placeholder="Email / Username"
             keyboardType={'email-address'}
-            
           />
-          <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 16}}>Password</Text>
+          <Text style={{ color: darkGreen, fontWeight: 'bold', fontSize: 16 }}>Password</Text>
           <Field placeholder="Password" secureTextEntry={true} />
           <View
-            style={{alignItems: 'flex-end', width: '78%', paddingRight: 16, marginBottom: 200}}>
-            <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 16}}>
+            style={{ alignItems: 'flex-end', width: '78%', paddingRight: 16, marginBottom: 200 }}>
+            <Text style={{ color: darkGreen, fontWeight: 'bold', fontSize: 16 }}>
               Forgot Password ?
             </Text>
           </View>
-          <Btn textColor='white' bgColor={darkGreen} btnLabel="Login" Press={() => alert("Logged In")} />
-          <View style={{ display: 'flex', flexDirection :'row', justifyContent: "center" }}>
-            <Text style={{ fontSize: 16, fontWeight:"bold" }}>Don't have an account ? </Text>
+          <Btn textColor='white' bgColor={darkGreen} btnLabel="Login" Press={handleLogin} />
+          <View style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>Don't have an account ? </Text>
             <TouchableOpacity onPress={() => props.navigation.navigate("Signup")}>
-            <Text style={{ color: darkGreen, fontWeight: 'bold', fontSize: 16 }}>Signup</Text>
+              <Text style={{ color: darkGreen, fontWeight: 'bold', fontSize: 16 }}>Signup</Text>
             </TouchableOpacity>
           </View>
         </View>
